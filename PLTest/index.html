@@ -19,35 +19,38 @@
 	</style>
 	
 <script type="text/javascript">
-	 $(function(){
+	$(function(){
 
-	 //Figure out the initial IPad orientation based on the window.orientation in degrees.
-	 //0 = Portrait - Upright
-	 //90 = Landscape - Upright
-	 //180 = Portrait - Inverted
-	 //-90 = Landscape - Inverted
- 
- if(window.orientation == 0 || window.orientation == 180){ .
-  var ori = "portrait";
- }else{
-  var ori = "landscape";
- }
- changeOrientation(ori);
+		//Figure out the initial IPad orientation based on the window.orientation in degrees.
+		//0 = Portrait - Upright
+		//90 = Landscape - Upright
+		//180 = Portrait - Inverted
+		//-90 = Landscape - Inverted
+		alert(window.orientation);
+		if(window.orientation == 0 || window.orientation == 180){ .
+			alert("Starting in Portrait Mode");
+			var ori = "portrait";
+		}else{
+		alert("Starting in Landscape Mode");
+			var ori = "landscape";
+		}
+		changeOrientation(ori);
 
- // Orientation Change
- // When orientation changes event is triggered
- // exposing an orientation property of either
- // landscape or portrait
- $('body').bind('orientationchange',function(event){
-  changeOrientation(event.orientation)
- })
+		// Orientation Change
+		// When orientation changes event is triggered
+		// exposing an orientation property of either
+		// landscape or portrait
+		$('body').bind('orientationchange',function(event){
+			alert("Changing Orientation to " + event.orientation);
+			changeOrientation(event.orientation);
+		});
 
- // Change the style dependengt on orientation
- function changeOrientation(ori){
-  //ori will be "portrait" or "landscape" - use these to build the correct IFrame URL.
-  $("#mainframe").attr("src", "msl_launchpad_" + ori + "\\msl_launchpad_" + ori + ".html");
- }
- });
+		// Change the style dependengt on orientation
+		function changeOrientation(ori){
+			//ori will be "portrait" or "landscape" - use these to build the correct IFrame URL.
+			$("#mainframe").attr("src", "msl_launchpad_" + ori + "\\msl_launchpad_" + ori + ".html");
+		}
+	});
 </script>
 </head> 
 
