@@ -1,0 +1,56 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Page Title</title> 
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+	<style type="text/css">
+	body {
+		margin: 0;
+	}
+	
+	#mainframe {
+		position:fixed; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;
+	}
+	</style>
+	
+<script type="text/javascript">
+	 $(function(){
+
+	 //Figure out the initial IPad orientation based on the window.orientation in degrees.
+	 //0 = Portrait - Upright
+	 //90 = Landscape - Upright
+	 //180 = Portrait - Inverted
+	 //-90 = Landscape - Inverted
+ 
+ if(window.orientation == 0 || window.orientation == 180){ .
+  var ori = "portrait";
+ }else{
+  var ori = "landscape";
+ }
+ changeOrientation(ori);
+
+ // Orientation Change
+ // When orientation changes event is triggered
+ // exposing an orientation property of either
+ // landscape or portrait
+ $('body').bind('orientationchange',function(event){
+  changeOrientation(event.orientation)
+ })
+
+ // Change the style dependengt on orientation
+ function changeOrientation(ori){
+  //ori will be "portrait" or "landscape" - use these to build the correct IFrame URL.
+  $("#mainframe").attr("src", "msl_launchpad_" + ori + "\\msl_launchpad_" + ori + ".html");
+ }
+</script>
+</head> 
+
+<body> 
+	<iframe id="mainframe" src="msl_launchpad_landscape\msl_launchpad_landscape.html" />
+</body>
+</html>
