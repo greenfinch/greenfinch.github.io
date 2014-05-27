@@ -13,11 +13,9 @@
 		margin: 0;
 	}
 	
-	#mainframe_landscape,
-	#mainframe_portrait	{
+	#mainframe {
 		position:fixed; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;
 	}
-	
 	</style>
 	
 <script type="text/javascript">
@@ -28,12 +26,13 @@
 		//90 = Landscape - Upright
 		//180 = Portrait - Inverted
 		//-90 = Landscape - Inverted
-		alert(window.orientation);
+		
 		if(window.orientation == 0 || window.orientation == 180){ 
 			var ori = "portrait";
 		}else{
 			var ori = "landscape";
 		}
+		
 		changeOrientation(ori);
 
 		// Orientation Change
@@ -49,26 +48,13 @@
 		// Change the style dependengt on orientation
 		function changeOrientation(ori){
 			//ori will be "portrait" or "landscape" - use these to build the correct IFrame URL.
-			//$("#mainframe").attr("src", "msl_launchpad_" + ori + "\\msl_launchpad_" + ori + ".html");
-			
-			if(ori == "portrait")
-			{
-				$("#mainframe_landscape").hide();
-				$("#mainframe_portrait").show();
-			}
-			else
-			{
-				$("#mainframe_portrait").hide();
-				$("#mainframe_landscape").show();
-			}
-			
+			$("#mainframe").attr("src", "msl_launchpad_" + ori + "\\msl_launchpad_" + ori + ".html");
 		}
 	});
 </script>
 </head> 
 
 <body> 
-	<iframe id="mainframe_landscape" src="msl_launchpad_landscape\msl_launchpad_landscape.html" />
-	<iframe id="mainframe_portrait" src="msl_launchpad_portrait\msl_launchpad_portrait.html" />
+	<iframe id="mainframe" src="msl_launchpad_landscape\msl_launchpad_landscape.html" />
 </body>
 </html>
