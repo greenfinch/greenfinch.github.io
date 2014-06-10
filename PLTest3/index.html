@@ -1,0 +1,48 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Page Title</title> 
+	
+	<script src="jquery-1.8.3.min.js"></script>
+	<style type="text/css">
+	body {
+		margin: 0;
+	}
+
+	</style>
+	
+<script type="text/javascript">
+$(document).ready(function() {
+	setOrientationListener();	
+});
+
+function setOrientationListener(){
+	rotationInterval = setInterval( function(){ 
+		handleResize(); 
+	}, 550 );
+}
+
+function handleResize()
+{
+	var vis_css = "position:fixed; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"
+	var hid_css = "position:fixed; top:0px; left:0px; bottom:0px; right:0px; width:1px; height:1px; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"		
+				
+	if($(window).width() < $(window).height()){
+		//alert('portarit');
+		$("#pframe").attr("style", vis_css);
+		$("#lframe").attr("style", hid_css);
+		
+	}else{
+		$("#pframe").attr("style", hid_css);
+		$("#lframe").attr("style", vis_css);
+	}
+}
+		
+</script>
+</head> 
+
+<body> 
+	<iframe id="lframe" src="msl_launchpad_landscape\msl_launchpad_landscape.html"></iframe>
+	<iframe id="pframe" src="msl_launchpad_portrait\msl_launchpad_portrait.html"></iframe>
+</body>
+</html>
