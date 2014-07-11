@@ -16,9 +16,9 @@
 	</style>
 	
 <script type="text/javascript">
-$(document).ready(function() {
+/*$(document).ready(function() {
 	setOrientationListener();	
-});
+});*/
 
 function setOrientationListener(){
 	rotationInterval = setInterval( function(){ 
@@ -33,9 +33,8 @@ function handleResize()
 				
 	if($(window).width() < $(window).height()){
 		//alert('portarit');
-		$("#pframe").attr("style", vis_css);
 		$("#lframe").attr("style", hid_css);
-		
+		$("#pframe").attr("style", vis_css);		
 	}else{
 		//alert('landscape');
 		$("#pframe").attr("style", hid_css);
@@ -47,7 +46,7 @@ function handleResize()
 </head> 
 
 <body> 
-	<iframe id="lframe" src="msl_launchpad_landscape\msl_launchpad_landscape.html"></iframe>
-	<iframe id="pframe" src="msl_launchpad_portrait\msl_launchpad_portrait.html"></iframe>
+	<!--iframe id="lframe" src="msl_launchpad_landscape\msl_launchpad_landscape.html"></iframe-->
+	<iframe id="pframe" src="msl_launchpad_portrait\msl_launchpad_portrait.html" style="position:fixed; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>
 </body>
 </html>
