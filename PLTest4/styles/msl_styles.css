@@ -1,0 +1,501 @@
+/*  CSS Document                             */
+
+@charset "UTF-8";
+
+/* FONT SETUP */
+@font-face {
+	font-family: 'Raleway';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Raleway Light'), local('Raleway-Light'), url(../fonts/raleway.woff) format('woff');
+}
+
+	
+/* Global Styles */
+body { margin: 0px; padding: 0px; font-family: Helvetica; font-size: 16px; background: #dedede;}
+
+h1 { }
+h2 { }
+h3 {  }
+p,ul { }
+a {
+	padding: 0px 0px 0px 0px;
+}
+
+.clear { clear: both; line-height: 1px; }
+
+
+/* Global Layout */
+
+.page  { display: block; top: 0px; left: 0px; }
+
+header  { display: block; position: absolute; top: 0px; left: 0px; }
+
+article { display: block; position: absolute; top: 70px; left: 0px; }
+article .content_container { position: absolute; top: 0px; left: 0px; background: none; }
+article .content_container .content_loading_container { position: absolute; top: 0px; padding: 40px 20px 0px 40px; }
+
+footer  { display:block; position: absolute;  left: 0px; height: 60px; opacity:0; }
+footer span  { position: absolute; top: 18px; right: 24px; font-size: 12px; }
+/*FOOTER NAV BTNS */
+.menuItem {
+	float: left;
+	width:200px;
+	padding-top:22px;
+	text-decoration: none;
+	text-align:center;
+	font-family: Helvetica;
+	font-size: 22px;
+	color: #646464;
+}
+
+
+/* Page-specific Layout */
+.page.home article .content_container {  }
+.page article .content_container.contact_us { }
+
+
+/*******************************************
+*
+*		POP LAYOUT - LEGAL OVERLAY
+*
+********************************************/
+#alert_overlay {
+	position:fixed;
+	display:none;
+	left:0px;
+	top:0px;
+	bottom:0px;
+	right:0px;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	z-index:999;
+
+}
+
+.alert_overlay_bg {
+	width: 100%;
+	height: 100%;
+	background: -webkit-radial-gradient(center, ellipse cover, rgb(79,70,71) 0%,rgb(0,0,0) 98%); /* Chrome10+,Safari5.1+ */
+	opacity:0.75;
+}
+
+#coming_soon_overlay {
+	position:fixed;
+	display:none;
+	left:0px;
+	top:0px;
+	bottom:0px;
+	right:0px;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	z-index:999;
+
+}
+
+.coming_soon_overlay_bg {
+	width: 100%;
+	height: 100%;
+	background: -webkit-radial-gradient(center, ellipse cover, rgb(79,70,71) 0%,rgb(0,0,0) 98%); /* Chrome10+,Safari5.1+ */
+	opacity:0.75;
+}
+
+.alert_box {
+	background: -webkit-radial-gradient(center, ellipse cover, rgb(242,242,242) 0%,rgb(206,198,199) 99%);
+	border: 1px solid black;
+	color: black;
+	
+	position: fixed;
+	width: 750px;
+	height:400px;
+	left:50%;
+	top:50%;
+	margin-top:-200px;
+	margin-left:-375px;
+}
+
+.alert_message {
+	
+	font-size: 26px;
+	text-decoration: none;
+	text-align:center;
+	font-family: Helvetica;
+	
+	position: absolute;
+	width: 600px;
+	height:450px;
+	
+	left: auto;
+	top: auto;
+	padding-left:10%;
+	padding-top:12%;
+}
+
+.alert_message .button {
+	position:absolute;
+	display:block;
+	overflow:hidden;
+	background-color:#007696;
+	
+	position:relative;
+	font-family: Helvetica;
+	font-size: 24px;
+	text-align:center;
+	color:#FFFFFF;
+	
+	width:165px;
+	height:60px;
+	left:216px;
+	top:20px;
+	cursor: pointer;
+}
+
+.alert_message span {
+	display: block;
+	margin-bottom: 15px;
+	width: 570px;	
+}
+
+/*******************************************
+*
+*		START LANDSCAPE SETUP
+*
+********************************************/
+/* Orientation-specific Layout - Landscape */
+.page.landscape  { position: relative; width: 2048px; height: 1407px; overflow: hidden;  background: url(../images/bg_port.png) no-repeat 0px 0px; background: url(../images/bg_land.png) no-repeat 0px 0px; }
+.page.landscape header  { width: 2048px; height:27px; display:block;}
+.page.landscape article { width: 2048px; height: 1190px; top: 27px; }
+/* FOOTER SETUP */
+.page.landscape footer  { width: 2048px; height:190px; top:1217px; display:block;}
+
+.page.landscape footer .nvs_logo {
+	position: absolute;
+	width:410px;
+	height: 71px;
+	background:url(../images/nvs_logo_land.png)  no-repeat 0px 0px;
+	top: 30px;
+	left:98px;	
+}
+.page.landscape footer .foot_nav {
+	position: relative;
+	width:608px;
+	height: 71px;
+	top: 30px;
+	left: 726px;
+}
+.page.landscape footer .copyright {
+	left:910px;
+	width: 200px;
+	top:120px;
+	color: #646464; 
+	font-size: 20px; 
+	font-family: Helvetica; 
+	position: absolute; 
+}
+
+.page.landscape footer .change_cpo {
+	left:1748px;
+	width: 225px;
+	top:49px;
+	position: absolute;
+	display:block; 
+}
+
+
+.page article .content_container .button {
+	font-family: 'Raleway', sans-serif;
+	font-size: 63px;
+	color: white;
+	width:500px;
+	position: relative;
+	float:left;
+	margin-left:54px;
+	text-decoration: none;
+	letter-spacing:-2px;
+	line-height: 70px;
+}
+
+
+.page.landscape article .content_container { width: 2048px; height: 1190px; }
+
+
+/* BOXES */
+.box_1, .box_2, .box_3, .box_4, .logo_holder, .box_6, .box_7, .box_8, .box_9  { 
+	-webkit-transition: all 0.5s ease; 
+}
+
+.page.landscape article .content_container .box_1 {
+		position: absolute;
+		width: 608px;
+		height: 372px;
+		padding: 0px 0px 0px 0px;
+		
+		background: url(../images/box1_bg.jpg) no-repeat 0px 0px;;
+		-webkit-transform: translate3d(98px,0px,0px);
+	}
+
+.page.landscape article .content_container .box_2 {
+		position: absolute;
+		width: 608px;
+		height: 193px;
+		background: url(../images/box2_bg.jpg);
+		-webkit-transform: translate3d(726px,0px,0px);
+
+	}
+	
+.page.landscape article .content_container .box_3 {
+		position: absolute;
+		width: 608px;
+		height: 370px;
+		background: url(../images/box3_bg.jpg);
+		-webkit-transform: translate3d(1354px,0px,0px);
+	}
+
+
+/* BOX 4 SETUP */
+.page.landscape article .content_container .box_4 {
+		position: absolute;
+		background: url(../images/box4_bg.jpg);
+		width: 608px;
+		height: 199px;
+		-webkit-transform: translate3d(98px,392px,0px);
+}
+	
+
+/* GLOBAL LOGO HOLDER SETUP */
+.page.landscape article .content_container .logo_holder {
+	position: absolute;
+	display: inline-block;
+	/* ADDED TO FIX DISAPPEARING LOGO */
+	background: url(../images/cpo_logo_port.jpg) no-repeat 0px 0px;
+	
+	background: url(../images/cpo_logo_land.jpg) no-repeat 0px 0px;
+	width: 608px;
+	height: 756px;
+	opacity:1.0;
+	-webkit-transform: translate3d(726px,212px,0px);
+
+}
+
+.page.landscape article .content_container .box_6 {
+		position: absolute;
+		width: 608px;
+		height: 410px;
+		background: url(../images/box6_bg.jpg) no-repeat 0px 0px;
+		-webkit-transform: translate3d(1354px,391px,0px);
+	}
+	
+.page.landscape article .content_container .box_7 {
+		position: absolute;
+		width: 608px;
+		height: 580px;
+		background: url(../images/box7_bg_land.jpg) no-repeat 0px 0px;
+		-webkit-transform: translate3d(98px,611px,0px);
+	}
+	
+.page.landscape article .content_container .box_8 {
+		position: absolute;
+		width: 608px;
+		height: 198px;
+		background: url(../images/box8_bg.jpg) no-repeat 0px 0px;
+		-webkit-transform: translate3d(726px,993px,0px);
+	}
+	
+.page.landscape article .content_container .box_9 {
+		position: absolute;
+		width: 608px;
+		height: 370px;
+		background: url(../images/box9_bg.jpg) no-repeat 0px 0px;
+		-webkit-transform: translate3d(1354px,820px,0px);
+	}
+
+
+
+/*******************************************
+*
+*			START PORTRAIT SETUP
+*
+********************************************/
+
+/* Orientation-specific Layout - Portrait */
+.page.portrait { position: relative; width: 1536px; height: 1918px; overflow: hidden;  background: url(../images/bg_port.png) no-repeat 0px 0px;  }
+.page.portrait header  { width: 1536px; height:90px; top:0px;}
+.page.portrait article { width: 1536px; height: 1622px; top:90px; }
+
+
+
+
+/* FOOTER SETUP */
+.page.portrait footer  { width: 1536px; height:206px; top:1712px;  }
+.page.portrait footer .nvs_logo {
+	position: absolute;
+	width:253px;
+	height: 47px;
+	background:url(../images/nvs_logo_port.png)  no-repeat 0px 0px;
+	top: 70px;
+	left:150px;	
+}
+
+.page.portrait footer .foot_nav {
+	position: relative;
+	width:608px;
+	height: 71px;
+	top: 22px;
+	left: 468px;
+}
+.page.portrait footer .copyright {
+	left:656px;
+	width: 200px;
+	top:140px;
+	color: #646464; 
+	font-size: 20px; 
+	font-family: Helvetica; 
+	position: absolute; 
+}
+
+.page.portrait footer .change_cpo {
+	left:1171px;
+	width: 225px;
+	top:49px;
+	position: absolute;
+	display:block; 
+}
+
+
+.page.portrait article .content_container { width: 1536px; height:1622px; }
+
+.page.portrait article .content_container .box_1 {
+		position: absolute;
+		width: 608px;
+		height: 372px;
+		background: url(../images/box1_bg.jpg) no-repeat 0px 0px;
+		-webkit-transform: translate3d(150px,600px,0px);
+	}
+	
+.page.portrait article .content_container .box_2 {
+		position: absolute;
+		width: 608px;
+		height: 193px;
+		background: url(../images/box2_bg.jpg);
+		-webkit-transform: translate3d(778px,0px,0px);
+	}
+	
+.page.portrait article .content_container .box_3 {
+		position: absolute;
+		width: 608px;
+		height: 370px;
+		background: url(../images/box3_bg.jpg);
+		-webkit-transform: translate3d(778px,432px,0px);
+	}
+	
+.page.portrait article .content_container .box_4 {
+		position: absolute;
+		width: 608px;
+		height: 199px;
+		background: url(../images/box4_bg.jpg) no-repeat 0px 0px;
+		-webkit-transform: translate3d(150px,992px,0px);
+	}
+	
+
+/* GLOBAL LOGO HOLDER SETUP */
+.page.portrait article .content_container .logo_holder {
+	position: absolute;
+	width: 608px;
+	height: 580px;
+	display: inline-block;
+	background: url(../images/cpo_logo_port.jpg) no-repeat 0px 0px;
+	-webkit-transform: translate3d(150px,0px,0px);
+}
+	
+
+.page.portrait article .content_container .box_6 {
+		position: absolute;
+		width: 608px;
+		height: 410px;
+		background: url(../images/box6_bg.jpg) no-repeat 0px 0px;
+		-webkit-transform: translate3d(778px,822px,0px);
+	}
+	
+.page.portrait article .content_container .box_7 {
+		position: absolute;
+		width: 608px;
+		height: 412px;
+		background: url(../images/box7_bg_land.jpg) no-repeat 0px 0px;
+		-webkit-transform: translate3d(150px,1211px,0px);
+	}
+
+.page.portrait article .content_container .box_8 {
+		position: absolute;
+		width: 608px;
+		height: 198px;
+		background: url(../images/box8_bg.jpg) no-repeat 0px 0px;
+		-webkit-transform: translate3d(778px,214px,0px);
+	}
+	
+.page.portrait article .content_container .box_9 {
+		position: absolute;
+		width: 608px;
+		height: 370px;
+		background: url(../images/box9_bg.jpg) no-repeat 0px 0px;
+		-webkit-transform: translate3d(778px,1253px,0px);
+	}
+
+
+/*******************************************
+*
+*			HELP OVRLAY SETUP
+*
+********************************************/
+
+.main_contain  { display: none; top: 0px; left: 0px; position: absolute; width: 2048px; height: 1407px; overflow: hidden; z-index:2; opacity:0; }
+.logo_container{ display: block; position:absolute; width: 446px; height: 151px; left:796px; top:1230px; overflow: hidden;  background: url(../images/help/mslHelpLogo.png) no-repeat 0px 0px; z-index:21;}
+
+.help_page  { display: block; top: 0px; left: 0px; position: absolute; width: 2048px; height: 1407px; overflow: hidden;  /*background: url(../images/help/bg.png) no-repeat 0px 0px;*/ z-index: 1; }
+
+.screen_shot_container {
+	position:absolute;
+	display:block;
+	width: 2048px;
+	height: 1407px;
+	z-index: 2;
+	opacity:0;
+	/*-webkit-transform: scale(0.25);*/
+}
+
+.main_img.portrait {
+	width: 1536px;
+}
+
+/*CLOSE NAV BTNS */
+.buttonItem {
+	position:relative;
+	float: left;
+	width:170px;
+	padding-top:12px;
+	text-decoration: none;
+	text-align:center;
+	font-family: Helvetica;
+	font-size: 26px;
+	color: #FFF;
+}
+
+.close_btn {
+	position:absolute;
+	display:block;
+	overflow:hidden;
+	width:180px;
+	height:60px;
+	/*background-color:#007696;*/
+	left:1878px;
+	z-index: 3;
+	top:0px;
+}
+
+#closeBtn.portrait {
+	left: 1356px;
+}
+
+.preload {
+	position: absolute;
+	left: -9999px;
+}
