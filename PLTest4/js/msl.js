@@ -82,6 +82,12 @@ $(document).ready(function () {
     });
 	//ALL NEW - EC
 
+	$("#closeLegalBtn").on("click", function (event) {
+        event.preventDefault();
+
+        document.getElementById('alert_overlay').style.display = "none";
+    });
+	
     $("#closeBtn").on("click", function (event) {
         event.preventDefault();
 
@@ -111,20 +117,20 @@ $(document).ready(function () {
     });
 });
 
-function showLegalOverlay() {
-    document.getElementById('alert_overlay').style.display = "block";
-    TweenMax.from($('.alert_box'), .5, {
-        css: {
-            opacity: 0,
-            top: 0
-        },
-        delay: 0.0
-    });
-}
+// function showLegalOverlay() {
+    // document.getElementById('alert_overlay').style.display = "block";
+    // TweenMax.from($('.alert_box'), .5, {
+        // css: {
+            // opacity: 0,
+            // top: 0
+        // },
+        // delay: 0.0
+    // });
+// }
 
-function hideLegalOverlay() {
-    document.getElementById('alert_overlay').style.display = "none";
-}
+// function hideLegalOverlay() {
+    // document.getElementById('alert_overlay').style.display = "none";
+// }
 
 function showComingSoonOverlay() {
     document.getElementById('coming_soon_overlay').style.display = "block";
