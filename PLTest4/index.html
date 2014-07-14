@@ -1,0 +1,216 @@
+<html lang="en">
+<head>
+    <title>MSL LaunchPad</title>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+	
+    <!-- Tell iPad to render at 1 to 1 ratio, eliminate pinching capability -->
+    <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=.5, user-scalable=no"/>
+    
+    <!-- Mobile safari web app -->
+    <!-- <meta name="apple-mobile-web-app-capable" content="yes" /> -->
+    
+    <!-- set status bar -->
+    <!-- <meta name="apple-mobile-web-app-status-bar-style" content="black"> -->
+    
+    <!-- APP ICON -->
+    <!--<link type="text/css" rel="apple-touch-icon-precomposed" href="assets/images/template/icon.png?v=1" /> -->
+    
+    <!-- CSS SETUP LINKS -->
+    <link type="text/css" rel="stylesheet" href="styles/msl_styles.css?v=1"/>
+    <link type="text/css" rel="apple-touch-startup-image" href="images/bg_land.png?v=1" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)"/>
+    <link type="text/css" rel="apple-touch-startup-image" href="images/bg_port.png?v=1" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)"/>
+    
+    <!-- SCRIPT INCLUDES -->
+    <script type="text/JavaScript" src="js/jquery.js?v=1"></script>
+    <script type="text/JavaScript" src="js/greensock/TweenMax.js?v=1"></script>
+    <script type="text/JavaScript" src="js/greensock/easing/EasePack.js?v=1"></script>
+    <script type="text/JavaScript" src="js/greensock/plugins/CSSPlugin.js?v=1"></script>
+    <script type="text/JavaScript" src="js/msl.js?v=1"></script>
+</head>
+<body>
+<div class="page" id="page">
+	<div id="alert_overlay">
+		<div class="alert_overlay_bg">
+		</div>
+		<div class='alert_box'>
+			<div class='alert_message'>
+				<span>
+				<b>LEGAL DISCLAIMER:</b><br>
+				 Before local implementation, you must ensure compliance with all applicable laws and regulations, including local industry codes, as well as local Novartis companies’ policies. </span>
+				<br style='clear: both'/>
+				<div class="button" id="closeLegalBtn">
+					<a class="buttonItem">Close</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="coming_soon_overlay">
+		<div class="coming_soon_overlay_bg">
+		</div>
+		<div class='alert_box'>
+			<div class='alert_message'>
+				<span>
+				<b style="text-align:center">COMING SOON.</b><br>
+				 The content for this section is currently in development. Please stay tuned for future updates! </span>
+				<br style='clear: both'/>
+				<div class="button">
+					<a id="closeLegalBtn" href="#" class="buttonItem" onclick='javascript:hideComingSoonOverlay()'>CLOSE</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="foot">
+		<div class="nvs_logo">
+		</div>
+		<!-------------------------------------------->
+		<!-- FOOTER BTN LABELS SETUP IS DONE BELOW HERE -->
+		<!-------------------------------------------->
+		<div class="foot_nav">
+			<!-- FAQ BUTTON -->
+			<a id="faq_btn" href="splus://collab.eu.novartis.net/ph/GMS/Lists/FAQ%20%20MSL%20LaunchPad" class="menuItem">FAQ</a>
+			<!--HELP BUTTON -->
+			<a id="help_btn" href="#" onclick='' class="menuItem">HELP</a>
+			<!-- LEGAL BUTTON -->
+			<a id="legal_btn" href='#' onclick='' class="menuItem">LEGAL</a>
+		</div>
+		<div class="copyright">
+			<span>© Novartis 2013</span>
+		</div>
+		<!-- COUNTRY SELECTOR BUTTON -->
+		<div class="change_cpo">
+			<a href="novartis://?action=selectcountry"><img src="images/change_CPO_btn.png"></a>
+		</div>
+	</footer>
+	<header></header>
+	<article>
+		<div class="content_container">
+			<div class="content_loading_container">
+			<!-- HTML pages loaded here from content folder -->
+			</div>
+			<!-------------------------------------------->
+			<!-- BUTTON LABELS SETUP IS DONE BELOW HERE -->
+			<!-------------------------------------------->
+			<div id="box1" class='box_1'>
+				<!-- PRIMARY CARE BUTTON -->
+				<a class="button" href="splus://collab.eu.novartis.net/ph/GMS/PC" style="top:70px;">Primary Care</a>
+				<!-------------------------------------------->
+				
+				<!-- CRITICAL CARE BUTTON -->
+				<a class="button" href="splus://collab.eu.novartis.net/ph/GMS/CC" style="top:140px;">Critical Care</a>
+				<!-------------------------------------------->
+			</div>
+			
+			<div id="box2" class='box_2'>
+				<!-- UNI. of MED AFFAIRS BUTTON -->
+				<a class="button" href="splus://ph-collab.eu.novartis.net/sites/UOMA/Manuals" style="top:26px;">University of<br>
+				 Medical Affairs</a>
+				<!-------------------------------------------->
+			</div>
+			
+			<div id="box3" class='box_3'>
+				<!-- SEARCH BUTTON -->
+				<a class="button" href="splus://collab.eu.novartis.net/ph/GMS/?action=search" style="top:70px;">Search</a>
+				<!-------------------------------------------->
+				
+				<!-- FAVS BUTTON -->
+				<a class="button" href="splus://?action=favorites" style="top:140px;">Favorites</a>
+				<!-------------------------------------------->
+			</div>
+			
+			<div id="box4" class='box_4'>
+				<!-- OPHTHALMOLOGY BUTTON -->
+				<a class="button" href="splus://collab.eu.novartis.net/ph/GMS/OPT" style="top:63px;">Ophthalmology</a>
+				<!-------------------------------------------->
+			</div>
+			
+			<!-- RESERVED AREA FOR CPO REGIONAL LOGO -->
+			<div id="cpo_logo" class='logo_holder'>
+			</div>
+			
+			<div id="box6" class='box_6'>
+				<!--MY CPO - this button is a place holder for the local CPO Repo and may not be used -->
+				<a class="button" href="https://collab.eu.novartis.net/ph/GMS/MSLL/Lists/Announcements/" style="top:60px;">My CPO</a>
+				<!-------------------------------------------->
+				
+				<!-- NEWS & ANNOUNCEMENTS BUTTON -->
+				<a class="button" href="splus://collab.eu.novartis.net/ph/GMS/Lists/Announcements" style="top:130px;">News/<br>
+				 Announcements</a>
+				<!-------------------------------------------->
+			</div>
+			
+			<div id="box7" class='box_7'>
+				<!-- NEUROSCIENCE BUTTON -->
+				<a class="button" href="splus://collab.eu.novartis.net/ph/GMS/NUROS" style="top:40px;">Neuroscience</a>
+				<!-------------------------------------------->
+				
+				<!-- INTEGRATED HOSPITAL CARE BUTTON -->
+				<a class="button" href="splus://collab.eu.novartis.net/ph/GMS/IHC" style="top:60px;">Integrated<br>
+				 Hospital Care</a>
+				<!-------------------------------------------->
+				
+				<!-- ESTABLISHED MEDICINES BUTTON -->
+				<a class="button" href="splus://collab.eu.novartis.net/ph/GMS/EM/" style="top:80px;">Established Meds</a>
+				<!-------------------------------------------->
+			</div>
+			
+			<div id="box8" class='box_8'>
+				<!-- The Registry BUTTON -->
+				<a class="button" href="https://appl.eu.novartis.net/ph/GPSC/GMAHEOR/Lists/Registration/NewForm.aspx?Source=https://appl.eu.novartis.net/ph/GPSC/GMAHEOR/SiteAssets/Confirmation.aspx" style="top:66px;">The Registry</a>
+				<!-------------------------------------------->
+			</div>
+			
+			<div id="box9" class='box_9'>
+				<!-- INSIGHTS BUTTON -->
+				<a class="button" href="splus://collab.eu.novartis.net/ph/GMS/Insights/" style="top:140px;">Insights</a>
+				<!-------------------------------------------->
+			</div>
+			
+			<!------------------------------>
+			<!--- BUTTON LABELS SETUP END -->
+			<!------------------------------>
+		</div>
+	</article>
+	
+	<!-- PRELOADING IMAGES -->
+	<img class="preload" src="images/bg_land.png"/>
+	<img class="preload" src="images/bg_port.png"/>
+	<img class="preload" src="images/box1_bg.jpg"/>
+	<img class="preload" src="images/box2_bg.jpg"/>
+	<img class="preload" src="images/box3_bg.jpg"/>
+	<img class="preload" src="images/box4_bg.jpg"/>
+	<img class="preload" src="images/box6_bg.jpg"/>
+	<img class="preload" src="images/box7_bg_land.jpg"/>
+	<img class="preload" src="images/box7_bg_port.jpg"/>
+	<img class="preload" src="images/box8_bg.jpg"/>
+	<img class="preload" src="images/box9_bg.jpg"/>
+	<img class="preload" src="images/change_CPO_btn.png"/>
+	<img class="preload" src="images/cpo_logo_land.jpg"/>
+	<img class="preload" src="images/cpo_logo_port.jpg"/>
+	<img class="preload" src="images/nvs_logo_land.png"/>
+	<img class="preload" src="images/nvs_logo_port.png"/>
+</div>
+
+<!--------------------------------------------->
+<!--- HELP OVERLAY SETUP START ---------------->
+<!--------------------------------------------->
+<div class="main_contain" id="main_contain">
+	<div class="close_btn" id="closeBtn">
+	</div>
+	
+	<!-- MAIN BG CONTAINER TO HOLD BG IMAGE-->
+	<div class="help_page">
+	</div>
+	
+	<div class="screen_shot_container">
+		<img class="main_img" src="images/help/help.png"/>
+	</div>
+</div>
+<!-------------------------------------------->
+<!--- HELP OVERLAY SETUP END ----------------->
+<!-------------------------------------------->
+	
+</body>
+</html>
